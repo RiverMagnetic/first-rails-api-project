@@ -6,9 +6,10 @@ I love lists. I'm really excited about learning through my idea's simplicity, an
 
 I am looking forward to building something I would want to use, and as I move beyond the MVP, I hope to appeal to other list lovers as well.
 
+
 ## The tables I will need
 
-I will need a user table, which will probably look like this when it's created in code:
+I will need a user table, which is probably already provided in the template, looking something like this:
 ```ruby
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
@@ -38,7 +39,10 @@ I will also need an items table with a column each for:
 | `/items/:id` |  PATCH/PUT   | Item Controller |     `items#update`      | _Change the properties of the item with the given id, using data provided by the request._ |
 | `/items/:id` |    DELETE    | Item Controller |     `items#destroy`     |                           _Destroy the item with the given id._         |
 
+
 ## Routes for Users Controller
+
+These routes are probably already set up in the template:
 
 | Request Type   | Path                   | Controller#Action |
 |----------------|------------------------|-------------------|
@@ -47,8 +51,10 @@ I will also need an items table with a column each for:
 | DELETE         | `/sign-out`            | `users#signout`   |
 | PATCH          | `/change-password`     | `users#changepw`  |
 
+
 ## Third paty APIs?
 
-I don't plan to use any on this project, at least on the first iterations.
+I don't plan to use any on this project, at least on the first few iterations.
+
 
 ## 
