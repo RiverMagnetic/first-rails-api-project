@@ -1,10 +1,10 @@
-class ItemsController < ProtectedController
+class ItemsController < OpenReadController
   before_action :set_item, only: [:show, :update, :destroy]
 
   # GET /items
   def index
-    @items = current_user.items
-    # @items = Item.all
+    @items = Item.all
+
     render json: @items
   end
 
@@ -15,9 +15,11 @@ class ItemsController < ProtectedController
 
   # POST /items
   def create
-    @item = current_user.items.build(item_params)
     # @item = Item.new(item_params)
-    p item
+    # @item.user_id = current_user.id
+
+      @item = current_user.items.build(item_params)
+
     if @item.save
       render json: @item, status: :created, location: @item
     else
@@ -47,6 +49,6 @@ class ItemsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def item_params
-      params.require(:item).permit(:item_names, :descriptions, :user)
+      params.require(:item).permit(:item_name, :description, :user_id)
     end
 end
