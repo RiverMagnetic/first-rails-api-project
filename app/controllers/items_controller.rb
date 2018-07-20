@@ -1,10 +1,10 @@
-class ItemsController < ApplicationController
+class ItemsController < ProtectedController
   before_action :set_item, only: [:show, :update, :destroy]
 
   # GET /items
   def index
-    @items = Item.all
-
+    @items = current_user.items
+    # @items = Item.all
     render json: @items
   end
 
@@ -15,8 +15,9 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    @item = Item.new(item_params)
-
+    @item = current_user.items.build(item_params)
+    # @item = Item.new(item_params)
+    p item
     if @item.save
       render json: @item, status: :created, location: @item
     else
