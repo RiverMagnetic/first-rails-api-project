@@ -1,4 +1,4 @@
-<% project_name = 'first-full-stack-project' %>
+<% project_name = 'my-list-app' %>
 
 default: &default
   adapter: postgresql
