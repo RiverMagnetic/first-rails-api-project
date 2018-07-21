@@ -3,7 +3,10 @@ class ItemsController < OpenReadController
 
   # GET /items
   def index
+    # if I want all items returned
     @items = Item.all
+    # if I only want the current users items returned to the current user:
+    # @items = current_user.items
 
     render json: @items
   end
@@ -29,6 +32,7 @@ class ItemsController < OpenReadController
 
   # PATCH/PUT /items/1
   def update
+    # binding.pry
     if @item.update(item_params)
       render json: @item
     else
