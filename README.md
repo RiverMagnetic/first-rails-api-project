@@ -12,7 +12,7 @@ I am looking forward to building something I would want to use, and as I move be
 I decided to go with something simple for my first full-stack project, in order to balance trying to get this done in under a week with my other commitments. Luckily, simplcity doesn't have to mean boring, and can actually be a fun starting place from which to continue exploring and building!
 
 
-I began by creating a schedule, and then writing user stories that matched the requirements and my ideas for a first iteration. You can see both of these on the Trello board I made for this project: https://trello.com/b/sqkzgniO/list-project
+I began by creating a schedule, and then writing user stories that matched the project requirements and my ideas for a first iteration. You can see both of these on the Trello board I made for this project: https://trello.com/b/sqkzgniO/list-project
 
 
 I created an ERD which I will link to in this README soon.
@@ -71,7 +71,7 @@ This project uses Ruby, Rails, and PostgreSQL.
 
 ## Development Process and Problem Solving
 
-I like to set time-frames that would be a stretch to meet to keep myself motivated and challenged. G.A's suggested schedule for the project is really valuable, so I decided to follow it, but attempted to finish the project in 3 days. I ended up with 27 of the 35 items on my schedule done in that time, but since the project was incomplete by the end of this deadline, I changed my personal schedule to hone in on requirements and rather than putting learning first.
+I like to set personal deadlines that would be a stretch to meet to keep myself motivated and challenged. General Assembly's suggested schedule for the project is really valuable, so I decided to make that the basis for my personal schedule, while attempting to finish the project in 3 days. I ended up with 27 of the 35 items on my schedule done in that time, but since the project was incomplete by the end of this deadline, in the second iteration of my schedule I honed in on requirements rather than putting learning first.
 
 I began by scaffolding an items table. I then wrote Ruby code to only allow signed-in users to access items, and add a POST action for items. I figured out that were issues in the scaffold caused by a misspelling and regenerated it. 
 
