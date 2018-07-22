@@ -7,9 +7,18 @@ I love lists. I'm really excited about learning through my idea's simplicity, an
 I am looking forward to building something I would want to use, and as I move beyond the MVP, I hope to appeal to other list lovers as well.
 
 
-## The tables I will need
+## Planning
 
-I will need a user table, which is probably already provided in the template, looking something like this:
+I decided to go with something simple for my first full-stack project, in order to balance trying to get this done in under a week with my other commitments. Luckily, simplcity doesn't have to mean boring, and can actually be a fun starting place from which to continue exploring and building!
+
+
+I began by creating a schedule, and then writing user stories that matched the requirements and my ideas for a first iteration. You can see both of these on the Trello board I made for this project: https://trello.com/b/sqkzgniO/list-project
+
+
+I created an ERD which I will link to in this README soon.
+
+
+I thought about the tables and columns I would need and decided I would need a user table, looking something like this:
 ```ruby
 class CreateUsers < ActiveRecord::Migration[5.1]
   def change
@@ -24,25 +33,23 @@ class CreateUsers < ActiveRecord::Migration[5.1]
 end 
 ```
 
-I will also need an items table with a column each for:
+I decided I would also need an items table with a column each for:
 - item names
 - descriptions
 - user_id
 
 
-## Routes for Items Controller
+I then decided to make some notes for myself about what routes I would need for my items controller:
 
 |     Path      | Request Type |    Controller     | Controller#Action |                                    Controller Directions                                     |
 |:-------------:|:------------:|:-----------------:|:-----------------:|:--------------------------------------------------------------------------------------------:|
-|   `/items`   |     GET      | Item Controller |      `items#index`      |                                    _Retrieve all items._                                    |
-|   `/items`   |     POST     | Item Controller |     `items#create`      |                   _Make a new item, using data provided by the request._                     |
-| `/items/:id` |  PATCH/PUT   | Item Controller |     `items#update`      | _Change the properties of the item with the given id, using data provided by the request._ |
-| `/items/:id` |    DELETE    | Item Controller |     `items#destroy`     |                           _Destroy the item with the given id._         |
+|   `/items`   |     GET      | Items Controller |      `items#index`      |                                    _Retrieve all items._                                    |
+|   `/items`   |     POST     | Items Controller |     `items#create`      |                   _Make a new item, using data provided by the request._                     |
+| `/items/:id` |  PATCH/PUT   | Items Controller |     `items#update`      | _Change the properties of the item with the given id, using data provided by the request._ |
+| `/items/:id` |    DELETE    | Items Controller |     `items#destroy`     |                           _Destroy the item with the given id._         |
 
 
-## Routes for Users Controller
-
-These routes are probably already set up in the template:
+... and for my users controller:
 
 | Request Type   | Path                   | Controller#Action |
 |----------------|------------------------|-------------------|
@@ -52,9 +59,21 @@ These routes are probably already set up in the template:
 | PATCH          | `/change-password`     | `users#changepw`  |
 
 
-## Third paty APIs?
+## Third party APIs?
 
 I don't plan to use any on this project, at least on the first few iterations.
 
 
-## 
+## Technologies used
+
+This project uses Ruby, Rails, and PostgreSQL.
+
+
+## Development Process and Problem Solving
+
+I like to set time-frames that would be a stretch to meet to keep myself motivated and challenged. G.A's suggested schedule for the project is really valuable, so I decided to follow it, but attempted to finish the project in 3 days. I ended up with 27 of the 35 items on my schedule done in that time, but since the project was incomplete by the end of this deadline, I changed my personal schedule to hone in on requirements and rather than putting learning first.
+
+I began by scaffolding an items table. I then wrote Ruby code to only allow signed-in users to access items, and add a POST action for items. I figured out that were issues in the scaffold caused by a misspelling and regenerated it. 
+
+When I ran into issues, I was proactive. I solved problems by looking through solved issues, posting issues in the issue queue, asking questions of fellow students and experienced developers, using binding.pry and my local server, testing things in my rails console, testing my requests with curl scripts, and checking out the output of my local server.
+
