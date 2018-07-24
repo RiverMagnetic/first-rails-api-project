@@ -7,3 +7,10 @@ class ExampleSerializer < ActiveModel::Serializer
     scope == object.user
   end
 end
+
+# {
+#   attributes: "blah",
+#   id : 5,
+#   text: "lorem upsum",
+#   editable: false
+# }
