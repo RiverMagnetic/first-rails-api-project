@@ -51,7 +51,8 @@ class ItemsController < OpenReadController
       @item = Item.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
+    # Only allow a trusted parameter "white list" through. This is for creating
+    # and updating.
     def item_params
       params.require(:item).permit(:item_name, :description, :user_id)
     end
