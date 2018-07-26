@@ -66,7 +66,7 @@ I don't plan to use any on this project, at least on the first few iterations.
 
 ## Technologies used
 
-This project uses Ruby, Rails, and PostgreSQL.
+This project uses Ruby, Rails, and PostgreSQL, and communicates with a front-end Javascript app I built. You can find the front-end repo here: https://github.com/RiverMagnetic/first-full-stack-project-client, and the deployed site here: https://rivermagnetic.github.io/first-full-stack-project-client/
 
 
 ## Development Process and Problem Solving
