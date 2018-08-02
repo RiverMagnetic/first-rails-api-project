@@ -15,7 +15,7 @@ I decided to go with something simple for my first full-stack project, in order 
 I began by creating a schedule, and then writing user stories that matched the project requirements and my ideas for a first iteration. You can see both of these on the Trello board I made for this project: https://trello.com/b/sqkzgniO/list-project
 
 
-I created an ERD which I will link to in this README soon.
+I created an ERD, which is very simple, but will need to be changed as future iterations become more complex: https://github.com/RiverMagnetic/first-rails-api-project/blob/master/erd.jpg.
 
 
 I thought about the tables and columns I would need and decided I would need a user table, looking something like this:
@@ -77,3 +77,7 @@ I began by scaffolding an items table. I then wrote Ruby code to only allow sign
 
 When I ran into issues, I was proactive. I solved problems by looking through solved issues, posting issues in the issue queue, asking questions of fellow students and experienced developers, using binding.pry and my local server, testing things in my rails console, testing my requests with curl scripts, and checking out the output of my local server.
 
+## Problems I Plan to Solve in Future Iterations
+
+1. I want users to be able to view each other's lists but not edit them.
+2. I want multiple users to choose to be able to share a list and edit the shared list.
