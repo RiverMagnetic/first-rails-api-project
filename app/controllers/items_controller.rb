@@ -1,12 +1,11 @@
-class ItemsController < OpenReadController
-  before_action :set_item, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class ItemsController < ProtectedController
+  before_action :set_item, only: %i[show update destroy]
 
   # GET /items
   def index
-    # if I want all items returned
-    @items = Item.all
-    # if I only want the current users items returned to the current user:
-    # @items = current_user.items
+    @items = current_user.items.all
 
     render json: @items
   end
@@ -21,7 +20,7 @@ class ItemsController < OpenReadController
     # @item = Item.new(item_params)
     # @item.user_id = current_user.id
 
-      @item = current_user.items.build(item_params)
+    @item = current_user.items.build(item_params)
 
     if @item.save
       render json: @item, status: :created, location: @item
@@ -32,7 +31,6 @@ class ItemsController < OpenReadController
 
   # PATCH/PUT /items/1
   def update
-    # binding.pry
     if @item.update(item_params)
       render json: @item
     else
@@ -46,14 +44,15 @@ class ItemsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_item
-      @item = Item.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through. This is for creating
-    # and updating.
-    def item_params
-      params.require(:item).permit(:item_name, :description, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_item
+    @item = current_user.items.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through. This is for creating
+  # and updating.
+  def item_params
+    params.require(:item).permit(:id, :item_name, :description)
+  end
 end
